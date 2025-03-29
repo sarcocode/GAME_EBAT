@@ -49,3 +49,4 @@ func _physics_process(delta: float) -> void:
 			# Это проверка гита друзья мои
 			
 			proverka gitaaaaaaaaaaaa
+			че за хуйня

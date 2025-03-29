@@ -6,12 +6,18 @@ var speed = 400.0
 var direction = Vector2(0, -1).normalized()
 # Максимальный угол отскока (в радианах)
 var max_bounce_angle = deg_to_rad(75)
+# Флаг, чтобы остановить игру после проигрыша
+var game_over = false
 
 func _ready():
 	# Задаем начальную скорость мяча
 	velocity = direction * speed
 
 func _physics_process(delta: float) -> void:
+	# Если игра окончена, не двигаем мяч
+	if game_over:
+		return
+	
 	# Двигаем мяч и проверяем столкновения
 	var collision = move_and_collide(velocity * delta)
 	
@@ -20,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		var collider = collision.get_collider()
 		
 		# Проверяем, столкнулись ли мы с платформой
-		if collider.name == "Platform":  # Замени "Platform" на имя твоей платформы
+		if collider.name == "Platform":
 			# Вычисляем точку контакта относительно центра платформы
 			var collision_point = collision.get_position().x
 			var platform_center = collider.global_position.x
@@ -37,16 +43,24 @@ func _physics_process(delta: float) -> void:
 		
 		# Проверяем, столкнулись ли мы с блоком
 		elif collider.is_in_group("Blocks"):
-			# Удаляем блок
-			collider.queue_free()
-			# Отражаем мяч
+			collider.queue_free()  # Удаляем блок
 			velocity = velocity.bounce(collision.get_normal())
 		
 		else:
 			# Если столкнулись с чем-то другим (например, стенами), просто отражаем
 			velocity = velocity.bounce(collision.get_normal())
-			
-			# Это проверка гита друзья мои
-			
-			proverka gitaaaaaaaaaaaa
-			че за хуйня
+	
+	# Проверяем, улетел ли мяч за нижнюю границу экрана
+	var screen_height = get_viewport().size.y
+	if position.y > screen_height:
+		game_over = true
+		show_game_over_screen()
+
+func show_game_over_screen():
+	# Ставим игру на паузу
+	get_tree().paused = true
+	
+	# Загружаем и добавляем сцену GameOver
+	var game_over_scene = preload("res://scenes/game_over.tscn")
+	var game_over_instance = game_over_scene.instantiate()
+	get_tree().root.add_child(game_over_instance)

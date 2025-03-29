@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgm1ckgiwd2rs"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_50fm1"]
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_mevex"]
 [ext_resource type="Texture2D" uid="uid://ye74v3cjtk1k" path="res://assets/afeeee.png" id="2_h6xgc"]
 
 [sub_resource type="FontFile" id="FontFile_wqdqv"]
@@ -104,7 +104,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_50fm1")
+script = ExtResource("1_mevex")
 
 [node name="background" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -130,7 +130,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 163.0
 offset_top = 546.0
-offset_right = 384.0
+offset_right = 399.0
 offset_bottom = 645.0
 text = "казел
 

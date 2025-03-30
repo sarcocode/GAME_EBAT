@@ -57,10 +57,15 @@ func _physics_process(delta: float) -> void:
 		show_game_over_screen()
 
 func show_game_over_screen():
+	print("Game Over! Добавляем экран...")
 	# Ставим игру на паузу
 	get_tree().paused = true
 	
 	# Загружаем и добавляем сцену GameOver
 	var game_over_scene = preload("res://scenes/game_over.tscn")
 	var game_over_instance = game_over_scene.instantiate()
+	
+	# Делаем так, чтобы UI работал даже при паузе
+	game_over_instance.process_mode = Node.PROCESS_MODE_ALWAYS
+
 	get_tree().root.add_child(game_over_instance)

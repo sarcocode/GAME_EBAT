@@ -1,15 +1,16 @@
-extends Control
+extends Control  # Или Node2D, в зависимости от корневого узла в GameOver.tscn
 
 func _ready():
-	# Проверяем, существует ли узел PlayAgainButton
-	if $PlayAgainButton:
-		$PlayAgainButton.pressed.connect(_on_play_again_pressed)
-		print("PlayAgainButton signal connected!")  # Отладочный вывод
-	else:
-		print("Error: PlayAgainButton not found!")
+	# Подключаем сигналы кнопок
+	$RestartButton.pressed.connect(_on_restart_button_pressed)
+	$MainMenuButton.pressed.connect(_on_main_menu_button_pressed)
 
-func _on_play_again_pressed():
-	print("Play Again button pressed!")  # Отладочный вывод
-	get_tree().paused = false
-	print("Paused state after unpause:", get_tree().paused)  # Должно быть false
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+func _on_restart_button_pressed():
+	print("Рестарт нажат")
+	get_tree().paused = false  # Снимаем паузу
+	get_tree().reload_current_scene()  # Перезапускаем текущую сцену (Game.tscn)
+
+func _on_main_menu_button_pressed():
+	print("Мейн меню нажат")
+	get_tree().paused = false  # Снимаем паузу
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")  # Переход в главное меню

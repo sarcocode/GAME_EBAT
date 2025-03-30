@@ -1,15 +1,20 @@
 extends CharacterBody2D
 
+# Скорость мяча
 var speed = 400.0
+# Начальное направление мяча
 var direction = Vector2(0, -1).normalized()
+# Максимальный угол отскока (в радианах)
 var max_bounce_angle = deg_to_rad(75)
+# Флаг ожидания запуска
 var is_waiting = true
+# Начальная позиция мяча
 var initial_position = Vector2.ZERO
 @onready var platform = get_parent().get_node("Platform")
 @onready var lives_display = get_parent().get_node("LivesDisplay")
 
 func _ready():
-	initial_position = platform.global_position + Vector2(-55, -200)  # Увеличил расстояние до блоков
+	initial_position = platform.global_position + Vector2(-55, -200)
 	position = initial_position
 	velocity = Vector2.ZERO
 
@@ -50,9 +55,15 @@ func _physics_process(delta: float) -> void:
 			is_waiting = true
 			position = initial_position
 			velocity = Vector2.ZERO
-			print("Осталось жизней: ", lives_display.lives)  # Оставил для отслеживания жизней
+			print("Осталось жизней: ", lives_display.lives)
 		else:
 			show_game_over_screen()
+
+func _input(event):
+	# Проверка нажатия Esc для паузы
+	if event.is_action_pressed("ui_cancel"):
+		if not get_tree().paused:
+			show_pause_screen()
 
 func check_win_condition():
 	if is_waiting:
@@ -62,7 +73,7 @@ func check_win_condition():
 		show_win_screen()
 
 func show_win_screen():
-	print("Победа! Все блоки уничтожены!")  # Оставил для подтверждения победы
+	print("Победа! Все блоки уничтожены!")
 	get_tree().paused = true
 	var win_screen_scene = preload("res://scenes/win_screen.tscn")
 	var win_screen_instance = win_screen_scene.instantiate()
@@ -70,9 +81,17 @@ func show_win_screen():
 	get_tree().root.add_child(win_screen_instance)
 
 func show_game_over_screen():
-	print("Game Over! Жизни закончились!")  # Оставил для подтверждения проигрыша
+	print("Game Over! Жизни закончились!")
 	get_tree().paused = true
 	var game_over_scene = preload("res://scenes/game_over.tscn")
 	var game_over_instance = game_over_scene.instantiate()
 	game_over_instance.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().root.add_child(game_over_instance)
+
+func show_pause_screen():
+	print("Пауза активирована")
+	get_tree().paused = true
+	var pause_screen_scene = preload("res://scenes/pause_screen.tscn")
+	var pause_screen_instance = pause_screen_scene.instantiate()
+	pause_screen_instance.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().root.add_child(pause_screen_instance)

@@ -1,28 +1,17 @@
 extends CharacterBody2D
 
-# Скорость мяча
 var speed = 400.0
-# Начальное направление мяча
 var direction = Vector2(0, -1).normalized()
-# Максимальный угол отскока (в радианах)
 var max_bounce_angle = deg_to_rad(75)
-# Флаг ожидания запуска
 var is_waiting = true
-# Начальная позиция мяча
 var initial_position = Vector2.ZERO
-# Ссылки на платформу и отображение жизней
 @onready var platform = get_parent().get_node("Platform")
 @onready var lives_display = get_parent().get_node("LivesDisplay")
 
 func _ready():
-	initial_position = platform.global_position + Vector2(-55, -100)
+	initial_position = platform.global_position + Vector2(-55, -200)  # Увеличил расстояние до блоков
 	position = initial_position
 	velocity = Vector2.ZERO
-	# Выводим начальное количество блоков
-	var blocks = get_tree().get_nodes_in_group("Blocks")
-	print("Начальное количество блоков: ", blocks.size())
-	for block in blocks:
-		print("Блок: ", block.name, " | Позиция: ", block.global_position, " | Видимый: ", block.visible)
 
 func _physics_process(delta: float) -> void:
 	if is_waiting:
@@ -33,7 +22,6 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	var collision = move_and_collide(velocity * delta)
-	
 	if collision:
 		var collider = collision.get_collider()
 		
@@ -49,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		elif collider.is_in_group("Blocks"):
 			collider.queue_free()
 			velocity = velocity.bounce(collision.get_normal())
-			await collider.tree_exited  # Ждем удаления блока
+			await collider.tree_exited
 			check_win_condition()
 		
 		else:
@@ -62,22 +50,19 @@ func _physics_process(delta: float) -> void:
 			is_waiting = true
 			position = initial_position
 			velocity = Vector2.ZERO
-			print("Осталось жизней: ", lives_display.lives)
+			print("Осталось жизней: ", lives_display.lives)  # Оставил для отслеживания жизней
 		else:
 			show_game_over_screen()
 
 func check_win_condition():
+	if is_waiting:
+		return
 	var blocks = get_tree().get_nodes_in_group("Blocks")
-	print("Осталось блоков: ", blocks.size())  # Выводим количество оставшихся блоков
 	if blocks.size() == 0:
 		show_win_screen()
-	else:
-		print("Следующие блоки остались в группе 'Blocks':")
-		for block in blocks:
-			print("Блок: ", block.name, " | Позиция: ", block.global_position, " | Видимый: ", block.visible)
 
 func show_win_screen():
-	print("Победа! Все блоки уничтожены!")
+	print("Победа! Все блоки уничтожены!")  # Оставил для подтверждения победы
 	get_tree().paused = true
 	var win_screen_scene = preload("res://scenes/win_screen.tscn")
 	var win_screen_instance = win_screen_scene.instantiate()
@@ -85,7 +70,7 @@ func show_win_screen():
 	get_tree().root.add_child(win_screen_instance)
 
 func show_game_over_screen():
-	print("Game Over! Жизни закончились!")
+	print("Game Over! Жизни закончились!")  # Оставил для подтверждения проигрыша
 	get_tree().paused = true
 	var game_over_scene = preload("res://scenes/game_over.tscn")
 	var game_over_instance = game_over_scene.instantiate()

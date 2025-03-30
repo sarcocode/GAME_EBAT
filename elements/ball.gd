@@ -49,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		elif collider.is_in_group("Blocks"):
 			collider.queue_free()
 			velocity = velocity.bounce(collision.get_normal())
+			await collider.tree_exited  # Ждем удаления блока
 			check_win_condition()
 		
 		else:

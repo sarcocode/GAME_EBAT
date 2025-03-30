@@ -122,6 +122,7 @@ offset_bottom = 645.0
 text = "Начать заново"
 
 [node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 743.0
 offset_right = 396.0

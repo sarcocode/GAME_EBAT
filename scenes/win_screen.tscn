@@ -112,6 +112,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
 [node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 163.0
 offset_top = 546.0
 offset_right = 399.0
@@ -119,6 +120,7 @@ offset_bottom = 645.0
 text = "Сыграть еще раз"
 
 [node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 743.0
 offset_right = 396.0
@@ -126,6 +128,7 @@ offset_bottom = 842.0
 text = "Выйти в главное меню"
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 68.0
 offset_top = 216.0
 offset_right = 479.0

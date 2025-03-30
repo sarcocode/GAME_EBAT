@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgm1ckgiwd2rs"]
+[gd_scene load_steps=5 format=3 uid="uid://bue5h8bmxa1q8"]
 
-[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_mevex"]
-[ext_resource type="Texture2D" uid="uid://ye74v3cjtk1k" path="res://assets/afeeee.png" id="2_h6xgc"]
+[ext_resource type="Script" path="res://win_screen.gd" id="1_0tq28"]
+[ext_resource type="Texture2D" uid="uid://ye74v3cjtk1k" path="res://assets/afeeee.png" id="2_04dgh"]
 
-[sub_resource type="FontFile" id="FontFile_4pnsm"]
+[sub_resource type="FontFile" id="FontFile_wqdqv"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -90,36 +90,33 @@ cache/0/32/0/underline_position = 0.0
 cache/0/32/0/underline_thickness = 0.0
 cache/0/32/0/scale = 1.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_5qbt4"]
-font = SubResource("FontFile_4pnsm")
+[sub_resource type="LabelSettings" id="LabelSettings_4yend"]
+font = SubResource("FontFile_wqdqv")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 shadow_size = 25
 shadow_color = Color(0.601431, 0.374657, 0.268067, 0)
 
-[node name="GameOver" type="Control"]
+[node name="WinScreen" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_mevex")
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0tq28")
 
 [node name="background" type="Sprite2D" parent="."]
 texture_repeat = 2
 position = Vector2(270, 480)
-texture = ExtResource("2_h6xgc")
+texture = ExtResource("2_04dgh")
 region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
 [node name="RestartButton" type="Button" parent="."]
-layout_mode = 0
 offset_left = 163.0
 offset_top = 546.0
 offset_right = 399.0
 offset_bottom = 645.0
-text = "Начать заново"
+text = "Сыграть еще раз"
 
 [node name="MainMenuButton" type="Button" parent="."]
 offset_left = 160.0
@@ -129,12 +126,11 @@ offset_bottom = 842.0
 text = "Выйти в главное меню"
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 118.0
-offset_top = 251.0
-offset_right = 432.0
-offset_bottom = 410.0
-text = "ПОТРАЧЕНО!"
-label_settings = SubResource("LabelSettings_5qbt4")
+offset_left = 68.0
+offset_top = 216.0
+offset_right = 479.0
+offset_bottom = 375.0
+text = "ПОБЕДА!"
+label_settings = SubResource("LabelSettings_4yend")
 horizontal_alignment = 1
 vertical_alignment = 1

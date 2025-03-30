@@ -32,14 +32,8 @@ rotation = 1.5708
 [node name="Platform" parent="." instance=ExtResource("4_to1tu")]
 position = Vector2(269, 777)
 
-[node name="Blocks" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(202, 129)
-
-[node name="Blocks2" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(286, 130)
-
-[node name="Blocks4" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(250, 130)
-
 [node name="LivesDisplay" parent="." instance=ExtResource("6_rkgpm")]
 position = Vector2(8, 5)
+
+[node name="Blocks" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
+position = Vector2(260, 145)

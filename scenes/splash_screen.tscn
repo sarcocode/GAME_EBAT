@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8f4p23iyj28x"]
+[gd_scene load_steps=6 format=3 uid="uid://b8f4p23iyj28x"]
 
-[ext_resource type="Texture2D" uid="uid://ye74v3cjtk1k" path="res://assets/afeeee.png" id="1_l4n7a"]
 [ext_resource type="Script" path="res://scenes/splash_screen.gd" id="1_xfg3b"]
+[ext_resource type="Shader" path="res://shaders/shader_for_wallpapers.gdshader" id="2_277no"]
+[ext_resource type="Texture2D" uid="uid://d15s26xjcwn8k" path="res://assets/images.png" id="3_kmv4p"]
+[ext_resource type="FontFile" uid="uid://l8jp5rdidxrp" path="res://fonts/SuperPixel-m2L8j.ttf" id="4_36i1a"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y4iw4"]
-blend_mode = 4
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yyexj"]
+shader = ExtResource("2_277no")
+shader_parameter/darkness = 1.0
+shader_parameter/desaturation = 0.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/tint_strength = 0.0
+shader_parameter/alpha = 0.795
 
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
@@ -13,19 +21,33 @@ script = ExtResource("1_xfg3b")
 
 [node name="background" type="Sprite2D" parent="."]
 texture_repeat = 2
+material = SubResource("ShaderMaterial_yyexj")
 position = Vector2(270, 480)
-texture = ExtResource("1_l4n7a")
+texture = ExtResource("3_kmv4p")
 region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
-[node name="TextEdit" type="TextEdit" parent="."]
-texture_filter = 5
-material = SubResource("CanvasItemMaterial_y4iw4")
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 132.0
-offset_top = 416.0
-offset_right = 492.0
-offset_bottom = 473.0
-theme_override_colors/font_color = Color(0.918097, 0.64251, 0.955336, 1)
-theme_override_font_sizes/font_size = 23
-text = "Соси мои яйца дружок"
+offset_left = 30.0
+offset_top = 283.0
+offset_right = 508.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0.729412, 0.439216, 0.8, 1)
+theme_override_fonts/font = ExtResource("4_36i1a")
+theme_override_font_sizes/font_size = 40
+text = "Hello my pidors!"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 556.0
+offset_right = 518.0
+offset_bottom = 682.0
+theme_override_colors/font_color = Color(0.729412, 0.439216, 0.8, 1)
+theme_override_fonts/font = ExtResource("4_36i1a")
+theme_override_font_sizes/font_size = 40
+text = "Welcome to
+
+Spermaball!"
+horizontal_alignment = 1

@@ -1,101 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgm1ckgiwd2rs"]
+[gd_scene load_steps=8 format=3 uid="uid://cgm1ckgiwd2rs"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_mevex"]
-[ext_resource type="Texture2D" uid="uid://ye74v3cjtk1k" path="res://assets/afeeee.png" id="2_h6xgc"]
+[ext_resource type="Shader" path="res://shaders/shader_for_wallpapers.gdshader" id="2_la6fo"]
+[ext_resource type="Texture2D" uid="uid://d15s26xjcwn8k" path="res://assets/images.png" id="3_xjvsw"]
+[ext_resource type="FontFile" uid="uid://l8jp5rdidxrp" path="res://fonts/SuperPixel-m2L8j.ttf" id="4_3bxps"]
 
-[sub_resource type="FontFile" id="FontFile_4pnsm"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/19/0/ascent = 0.0
-cache/0/19/0/descent = 0.0
-cache/0/19/0/underline_position = 0.0
-cache/0/19/0/underline_thickness = 0.0
-cache/0/19/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/21/0/ascent = 0.0
-cache/0/21/0/descent = 0.0
-cache/0/21/0/underline_position = 0.0
-cache/0/21/0/underline_thickness = 0.0
-cache/0/21/0/scale = 1.0
-cache/0/22/0/ascent = 0.0
-cache/0/22/0/descent = 0.0
-cache/0/22/0/underline_position = 0.0
-cache/0/22/0/underline_thickness = 0.0
-cache/0/22/0/scale = 1.0
-cache/0/23/0/ascent = 0.0
-cache/0/23/0/descent = 0.0
-cache/0/23/0/underline_position = 0.0
-cache/0/23/0/underline_thickness = 0.0
-cache/0/23/0/scale = 1.0
-cache/0/24/0/ascent = 0.0
-cache/0/24/0/descent = 0.0
-cache/0/24/0/underline_position = 0.0
-cache/0/24/0/underline_thickness = 0.0
-cache/0/24/0/scale = 1.0
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/26/0/ascent = 0.0
-cache/0/26/0/descent = 0.0
-cache/0/26/0/underline_position = 0.0
-cache/0/26/0/underline_thickness = 0.0
-cache/0/26/0/scale = 1.0
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/28/0/ascent = 0.0
-cache/0/28/0/descent = 0.0
-cache/0/28/0/underline_position = 0.0
-cache/0/28/0/underline_thickness = 0.0
-cache/0/28/0/scale = 1.0
-cache/0/29/0/ascent = 0.0
-cache/0/29/0/descent = 0.0
-cache/0/29/0/underline_position = 0.0
-cache/0/29/0/underline_thickness = 0.0
-cache/0/29/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/31/0/ascent = 0.0
-cache/0/31/0/descent = 0.0
-cache/0/31/0/underline_position = 0.0
-cache/0/31/0/underline_thickness = 0.0
-cache/0/31/0/scale = 1.0
-cache/0/32/0/ascent = 0.0
-cache/0/32/0/descent = 0.0
-cache/0/32/0/underline_position = 0.0
-cache/0/32/0/underline_thickness = 0.0
-cache/0/32/0/scale = 1.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mv8t"]
+shader = ExtResource("2_la6fo")
+shader_parameter/darkness = 1.0
+shader_parameter/desaturation = 0.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/tint_strength = 0.0
+shader_parameter/alpha = 0.795
 
-[sub_resource type="LabelSettings" id="LabelSettings_5qbt4"]
-font = SubResource("FontFile_4pnsm")
-font_size = 32
-font_color = Color(0, 0, 0, 1)
-shadow_size = 25
-shadow_color = Color(0.601431, 0.374657, 0.268067, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqgm6"]
+bg_color = Color(0.443137, 0.247059, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pku11"]
+bg_color = Color(0.729412, 0.298039, 0.403922, 1)
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -108,34 +31,41 @@ script = ExtResource("1_mevex")
 
 [node name="background" type="Sprite2D" parent="."]
 texture_repeat = 2
+material = SubResource("ShaderMaterial_4mv8t")
 position = Vector2(270, 480)
-texture = ExtResource("2_h6xgc")
+texture = ExtResource("3_xjvsw")
 region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
+[node name="Label3" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 276.0
+offset_right = 516.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0.729412, 0.439216, 0.8, 1)
+theme_override_fonts/font = ExtResource("4_3bxps")
+theme_override_font_sizes/font_size = 40
+text = "Game over"
+horizontal_alignment = 1
+
 [node name="RestartButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 163.0
-offset_top = 546.0
-offset_right = 399.0
-offset_bottom = 645.0
-text = "Начать заново"
+offset_left = 96.0
+offset_top = 554.0
+offset_right = 440.0
+offset_bottom = 650.0
+theme_override_fonts/font = ExtResource("4_3bxps")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_hqgm6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pku11")
+text = "Restart"
 
 [node name="MainMenuButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 160.0
-offset_top = 743.0
-offset_right = 396.0
-offset_bottom = 842.0
-text = "Выйти в главное меню"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 118.0
-offset_top = 251.0
-offset_right = 432.0
-offset_bottom = 410.0
-text = "ПОТРАЧЕНО!"
-label_settings = SubResource("LabelSettings_5qbt4")
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 95.0
+offset_top = 829.0
+offset_right = 439.0
+offset_bottom = 925.0
+theme_override_fonts/font = ExtResource("4_3bxps")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_hqgm6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pku11")
+text = "Back to menu"

@@ -1,19 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://cllouwo3c88q"]
+[gd_scene load_steps=9 format=3 uid="uid://cllouwo3c88q"]
 
-[ext_resource type="Texture2D" uid="uid://ye74v3cjtk1k" path="res://assets/afeeee.png" id="1_tygy6"]
+[ext_resource type="Shader" path="res://shaders/shader_for_wallpapers.gdshader" id="1_yagp4"]
 [ext_resource type="PackedScene" uid="uid://o1ctaosky1k4" path="res://elements/ball.tscn" id="2_80ghs"]
+[ext_resource type="Texture2D" uid="uid://d15s26xjcwn8k" path="res://assets/images.png" id="2_s2agr"]
 [ext_resource type="PackedScene" uid="uid://8bl2h88o34qf" path="res://elements/wall/wall.tscn" id="3_fntoy"]
 [ext_resource type="PackedScene" uid="uid://demv0136bgqqd" path="res://elements/platform.tscn" id="4_to1tu"]
 [ext_resource type="PackedScene" uid="uid://81gpne0n8pf2" path="res://elements/block.tscn" id="5_ms4g2"]
 [ext_resource type="PackedScene" uid="uid://c3goliqpktcib" path="res://scenes/lives_display.tscn" id="6_rkgpm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iilsm"]
+shader = ExtResource("1_yagp4")
+shader_parameter/darkness = 1.0
+shader_parameter/desaturation = 0.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/tint_strength = 0.0
+shader_parameter/alpha = 0.795
 
 [node name="Game" type="Node2D"]
 texture_filter = 6
 
 [node name="background" type="Sprite2D" parent="."]
 texture_repeat = 2
+material = SubResource("ShaderMaterial_iilsm")
 position = Vector2(270, 480)
-texture = ExtResource("1_tygy6")
+texture = ExtResource("2_s2agr")
 region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
@@ -36,4 +47,16 @@ position = Vector2(269, 777)
 position = Vector2(8, 5)
 
 [node name="Blocks" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(260, 145)
+position = Vector2(289, 116)
+
+[node name="Blocks2" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
+position = Vector2(144, 103)
+
+[node name="Blocks3" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
+position = Vector2(327, 144)
+
+[node name="Blocks4" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
+position = Vector2(167, 175)
+
+[node name="Blocks5" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
+position = Vector2(286, 196)

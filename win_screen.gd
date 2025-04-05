@@ -1,5 +1,5 @@
 extends Control
-
+# Хуище
 func _ready():
 	$RestartButton.pressed.connect(_on_restart_button_pressed)
 	$MainMenuButton.pressed.connect(_on_main_menu_button_pressed)

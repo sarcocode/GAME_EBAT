@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ba2jo61ytm2m5"]
 
-[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="1_hhxes"]
+[ext_resource type="Script" uid="uid://8uyoscgsvqs2" path="res://scenes/audio_manager.gd" id="1_hhxes"]
 [ext_resource type="AudioStream" uid="uid://cmkw5lyudy7af" path="res://sounds/Sabrina Carpenter-Espresso-kissvk.com (1).mp3" id="1_p42t8"]
 
 [node name="AudioManager" type="Node"]

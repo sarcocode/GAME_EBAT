@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8f4p23iyj28x"]
 
-[ext_resource type="Script" path="res://scenes/splash_screen.gd" id="1_xfg3b"]
-[ext_resource type="Shader" path="res://shaders/shader_for_wallpapers.gdshader" id="2_277no"]
+[ext_resource type="Script" uid="uid://ckpecj1qxmpn0" path="res://scenes/splash_screen.gd" id="1_xfg3b"]
+[ext_resource type="Shader" uid="uid://e2j6278cvro3" path="res://shaders/shader_for_wallpapers.gdshader" id="2_277no"]
 [ext_resource type="Texture2D" uid="uid://d15s26xjcwn8k" path="res://assets/images.png" id="3_kmv4p"]
 [ext_resource type="FontFile" uid="uid://l8jp5rdidxrp" path="res://fonts/SuperPixel-m2L8j.ttf" id="4_36i1a"]
 
@@ -40,6 +40,7 @@ text = "Hello my pidors!"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 556.0
 offset_right = 518.0

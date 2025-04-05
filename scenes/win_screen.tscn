@@ -76,3 +76,14 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_l81l2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1sfj6")
 text = "Back to menu"
+
+[node name="NextLevelButton" type="Button" parent="."]
+offset_left = 100.0
+offset_top = 402.0
+offset_right = 444.0
+offset_bottom = 498.0
+theme_override_fonts/font = ExtResource("4_anbbb")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_u13gh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gq87m")
+text = "Next level"

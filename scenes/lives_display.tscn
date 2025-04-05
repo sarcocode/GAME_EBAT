@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3goliqpktcib"]
 
-[ext_resource type="Script" path="res://scenes/lives_display.gd" id="1_t8alb"]
+[ext_resource type="Script" uid="uid://boi16nfe30638" path="res://scenes/lives_display.gd" id="1_t8alb"]
 [ext_resource type="FontFile" uid="uid://l8jp5rdidxrp" path="res://fonts/SuperPixel-m2L8j.ttf" id="2_ftl5m"]
 
 [node name="LivesDisplay" type="Node2D"]

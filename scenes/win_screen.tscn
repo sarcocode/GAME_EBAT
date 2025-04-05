@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bue5h8bmxa1q8"]
 
-[ext_resource type="Script" path="res://win_screen.gd" id="1_0tq28"]
-[ext_resource type="Shader" path="res://shaders/shader_for_wallpapers.gdshader" id="2_34woj"]
+[ext_resource type="Script" uid="uid://sidydnoqvqsl" path="res://win_screen.gd" id="1_0tq28"]
+[ext_resource type="Shader" uid="uid://e2j6278cvro3" path="res://shaders/shader_for_wallpapers.gdshader" id="2_34woj"]
 [ext_resource type="Texture2D" uid="uid://d15s26xjcwn8k" path="res://assets/images.png" id="3_ui0x8"]
 [ext_resource type="FontFile" uid="uid://l8jp5rdidxrp" path="res://fonts/SuperPixel-m2L8j.ttf" id="4_anbbb"]
 
@@ -42,6 +42,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 276.0
 offset_right = 516.0
@@ -53,6 +54,7 @@ text = "You won!"
 horizontal_alignment = 1
 
 [node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 100.0
 offset_top = 557.0
 offset_right = 444.0
@@ -64,6 +66,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gq87m")
 text = "Play again"
 
 [node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 103.0
 offset_top = 833.0
 offset_right = 447.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://demv0136bgqqd"]
 
 [ext_resource type="Texture2D" uid="uid://b0ueymt5acicu" path="res://assets/png-klev-club-dbcn-p-nomera-png-2.png" id="1_6kxlp"]
-[ext_resource type="Script" path="res://elements/platform.gd" id="1_on6j8"]
+[ext_resource type="Script" uid="uid://colweae7umgal" path="res://elements/platform.gd" id="1_on6j8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3nob"]
 size = Vector2(149, 31)

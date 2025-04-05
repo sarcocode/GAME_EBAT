@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://o1ctaosky1k4"]
 
 [ext_resource type="Texture2D" uid="uid://b7nbgsk8xbyo5" path="res://assets/pngimg.com - football_PNG52787.png" id="1_0y7lx"]
-[ext_resource type="Script" path="res://elements/ball.gd" id="1_qlqa3"]
+[ext_resource type="Script" uid="uid://bnt1u8otx6p4" path="res://elements/ball.gd" id="1_qlqa3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwanf"]
 radius = 13.0

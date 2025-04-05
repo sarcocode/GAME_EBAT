@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccy7y8y674vuq"]
+
+[ext_resource type="Shader" uid="uid://c22m7g0hwgdho" path="res://shaders/shader_for_wallpapers.gdshader" id="1_6ep0u"]
+[ext_resource type="Script" uid="uid://ducu0qfdbtlda" path="res://scenes/level_2.gd" id="1_hrcei"]
+[ext_resource type="Texture2D" uid="uid://d15s26xjcwn8k" path="res://assets/images.png" id="2_hrcei"]
+[ext_resource type="PackedScene" uid="uid://o1ctaosky1k4" path="res://elements/ball.tscn" id="3_xa7n4"]
+[ext_resource type="PackedScene" uid="uid://8bl2h88o34qf" path="res://elements/wall/wall.tscn" id="4_bo4dx"]
+[ext_resource type="PackedScene" uid="uid://demv0136bgqqd" path="res://elements/platform.tscn" id="5_76toy"]
+[ext_resource type="PackedScene" uid="uid://c3goliqpktcib" path="res://scenes/lives_display.tscn" id="6_8g4ke"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iilsm"]
+shader = ExtResource("1_6ep0u")
+shader_parameter/darkness = 1.0
+shader_parameter/desaturation = 0.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/tint_strength = 0.0
+shader_parameter/alpha = 0.795
+
+[node name="Game" type="Node2D"]
+texture_filter = 6
+script = ExtResource("1_hrcei")
+
+[node name="background" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_iilsm")
+position = Vector2(270, 480)
+texture = ExtResource("2_hrcei")
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="ball" parent="." instance=ExtResource("3_xa7n4")]
+position = Vector2(211, 624)
+
+[node name="wall" parent="." instance=ExtResource("4_bo4dx")]
+
+[node name="wall2" parent="." instance=ExtResource("4_bo4dx")]
+position = Vector2(540, 4)
+
+[node name="wall3" parent="." instance=ExtResource("4_bo4dx")]
+position = Vector2(718, 0)
+rotation = 1.5708
+
+[node name="Platform" parent="." instance=ExtResource("5_76toy")]
+position = Vector2(269, 777)
+
+[node name="LivesDisplay" parent="." instance=ExtResource("6_8g4ke")]
+position = Vector2(8, 5)

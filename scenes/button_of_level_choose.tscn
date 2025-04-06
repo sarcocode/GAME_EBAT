@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://mhd2uehx0jvg"]
+
+[ext_resource type="FontFile" uid="uid://cu8vx1vb0i5qy" path="res://fonts/Pixelout Personal Use Only.ttf" id="1_orlq4"]
+[ext_resource type="Script" uid="uid://cqj3ouawvfcxm" path="res://scenes/button_of_level_choose.gd" id="2_dwtci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7lox"]
+bg_color = Color(0.443137, 0.247059, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_346c7"]
+bg_color = Color(0.729412, 0.298039, 0.403922, 1)
+
+[node name="Button_of_level_choose" type="Button"]
+offset_right = 70.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_orlq4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_d7lox")
+theme_override_styles/normal = SubResource("StyleBoxFlat_346c7")
+script = ExtResource("2_dwtci")

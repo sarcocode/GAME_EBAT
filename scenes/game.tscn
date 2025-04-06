@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://cllouwo3c88q"]
 
+[ext_resource type="Script" uid="uid://cwvhuay2xmx22" path="res://scenes/Level_1.gd" id="1_u5sy4"]
 [ext_resource type="Shader" uid="uid://e2j6278cvro3" path="res://shaders/shader_for_wallpapers.gdshader" id="1_yagp4"]
 [ext_resource type="PackedScene" uid="uid://o1ctaosky1k4" path="res://elements/ball.tscn" id="2_80ghs"]
 [ext_resource type="Texture2D" uid="uid://d15s26xjcwn8k" path="res://assets/images.png" id="2_s2agr"]
 [ext_resource type="PackedScene" uid="uid://8bl2h88o34qf" path="res://elements/wall/wall.tscn" id="3_fntoy"]
 [ext_resource type="PackedScene" uid="uid://demv0136bgqqd" path="res://elements/platform.tscn" id="4_to1tu"]
-[ext_resource type="PackedScene" uid="uid://81gpne0n8pf2" path="res://elements/block.tscn" id="5_ms4g2"]
 [ext_resource type="PackedScene" uid="uid://c3goliqpktcib" path="res://scenes/lives_display.tscn" id="6_rkgpm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iilsm"]
@@ -19,6 +19,7 @@ shader_parameter/alpha = 0.795
 
 [node name="Game" type="Node2D"]
 texture_filter = 6
+script = ExtResource("1_u5sy4")
 
 [node name="background" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -45,18 +46,3 @@ position = Vector2(269, 777)
 
 [node name="LivesDisplay" parent="." instance=ExtResource("6_rkgpm")]
 position = Vector2(8, 5)
-
-[node name="Blocks" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(289, 116)
-
-[node name="Blocks2" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(144, 103)
-
-[node name="Blocks3" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(327, 144)
-
-[node name="Blocks4" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(167, 175)
-
-[node name="Blocks5" parent="." groups=["Blocks"] instance=ExtResource("5_ms4g2")]
-position = Vector2(286, 196)

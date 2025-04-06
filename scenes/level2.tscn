@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccy7y8y674vuq"]
 
-[ext_resource type="Shader" uid="uid://c22m7g0hwgdho" path="res://shaders/shader_for_wallpapers.gdshader" id="1_6ep0u"]
+[ext_resource type="Shader" uid="uid://e2j6278cvro3" path="res://shaders/shader_for_wallpapers.gdshader" id="1_6ep0u"]
 [ext_resource type="Script" uid="uid://ducu0qfdbtlda" path="res://scenes/level_2.gd" id="1_hrcei"]
 [ext_resource type="Texture2D" uid="uid://d15s26xjcwn8k" path="res://assets/images.png" id="2_hrcei"]
 [ext_resource type="PackedScene" uid="uid://o1ctaosky1k4" path="res://elements/ball.tscn" id="3_xa7n4"]

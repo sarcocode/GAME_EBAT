@@ -14,7 +14,7 @@ var initial_position = Vector2.ZERO
 @onready var lives_display = get_parent().get_node("LivesDisplay")
 
 func _ready():
-	initial_position = platform.global_position + Vector2(-55, -200)
+	initial_position = platform.global_position + Vector2(-55, -100)
 	position = initial_position
 	velocity = Vector2.ZERO
 

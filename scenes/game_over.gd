@@ -1,16 +1,14 @@
-extends Control  # Или Node2D, в зависимости от корневого узла в GameOver.tscn
+# GameOver.gd
+extends Control
+
+var current_level_path: String
 
 func _ready():
-	# Подключаем сигналы кнопок
-	$RestartButton.pressed.connect(_on_restart_button_pressed)
-	$MainMenuButton.pressed.connect(_on_main_menu_button_pressed)
+	if has_node("RestartButton"):
+		$RestartButton.current_level_path = current_level_path
 
-func _on_restart_button_pressed():
-	print("Рестарт нажат")
-	get_tree().paused = false  # Снимаем паузу
-	get_tree().reload_current_scene()  # Перезапускаем текущую сцену (Game.tscn)
-
-func _on_main_menu_button_pressed():
-	print("Мейн меню нажат")
-	get_tree().paused = false  # Снимаем паузу
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")  # Переход в главное меню
+func _exit_tree():
+	if has_node("RestartButton") and $RestartButton.pressed.is_connected($RestartButton._on_button_pressed):
+		$RestartButton.pressed.disconnect($RestartButton._on_button_pressed)
+	if has_node("MainMenuButton") and $MainMenuButton.pressed.is_connected($MainMenuButton._on_button_pressed):
+		$MainMenuButton.pressed.disconnect($MainMenuButton._on_button_pressed)

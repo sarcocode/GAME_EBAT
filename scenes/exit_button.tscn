@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd80t8obwfdrw"]
+
+[ext_resource type="FontFile" uid="uid://l8jp5rdidxrp" path="res://fonts/SuperPixel-m2L8j.ttf" id="1_23auf"]
+[ext_resource type="Script" uid="uid://nbxh6qw4t2w4" path="res://scenes/exit_button.gd" id="2_23auf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nosb7"]
+bg_color = Color(0.443137, 0.247059, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw7vt"]
+bg_color = Color(0.729412, 0.298039, 0.403922, 1)
+
+[node name="ExitButton" type="Button"]
+offset_right = 344.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("1_23auf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_nosb7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hw7vt")
+text = "exit game"
+script = ExtResource("2_23auf")

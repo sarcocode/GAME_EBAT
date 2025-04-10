@@ -6,5 +6,5 @@ func _ready():
 		pressed.connect(_on_button_pressed)
 
 func _on_button_pressed():
-	if is_inside_tree() and ResourceLoader.exists("res://scenes/level_choose.tscn"):
-		get_tree().change_scene_to_file("res://scenes/level_choose.tscn")
+	if is_inside_tree() and ResourceLoader.exists("res://scenes/save_slots.tscn"):
+		get_tree().change_scene_to_file("res://scenes/save_slots.tscn")

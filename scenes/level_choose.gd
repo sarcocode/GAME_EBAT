@@ -1,5 +1,7 @@
 extends Control
 
+@onready var back_button = $Back  # Ссылка на кнопку "Назад"
+
 func _ready():
 	var button_scene = preload("res://scenes/button_of_level_choose.tscn")  # Загружаем сцену кнопки
 	
@@ -38,3 +40,10 @@ func _ready():
 			)
 			add_child(button)  # Добавляем в сцену
 			level_counter += 1  # Увеличиваем счётчик
+	
+	# Подключаем сигнал для кнопки "Назад"
+	back_button.pressed.connect(_on_back_pressed)
+
+func _on_back_pressed():
+	# Переход на сцену выбора сохранений
+	get_tree().change_scene_to_file("res://scenes/save_slots.tscn")

@@ -10,14 +10,14 @@ func _ready():
 	
 	var block_scene = preload("res://elements/block.tscn")
 	var size = 15
-	var center = size / 2
+	var center = int(size / 2)
 	var spacing = 20
 	var screen_width = 540
 	var screen_height = 960
 	var total_width = size * spacing
 	var total_height = size * spacing
-	var start_x = (screen_width - total_width) / 2
-	var start_y = (screen_height - total_height) / 2
+	var start_x = int((screen_width - total_width) / 2)
+	var start_y = int((screen_height - total_height) / 2)
 	
 	for y in range(size):
 		for x in range(size):

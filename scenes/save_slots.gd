@@ -79,7 +79,7 @@ func _on_clear_pressed():
 			1: slot1_button.text = slot1_button.text if slot1_button.text else "Slot1"
 			2: slot2_button.text = slot2_button.text if slot2_button.text else "Slot2"
 			3: slot3_button.text = slot3_button.text if slot3_button.text else "Slot3"
-	load_all_slots()
+	get_tree().reload_current_scene()
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

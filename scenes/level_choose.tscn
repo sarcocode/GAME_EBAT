@@ -38,6 +38,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 875.0
 offset_right = 160.0

@@ -72,6 +72,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_81rur")
 text = "Slot one"
 
 [node name="Slot2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 99.0
 offset_top = 571.0
 offset_right = 443.0
@@ -95,6 +96,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qta7k")
 text = "Slot three"
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 875.0
 offset_right = 160.0
@@ -106,6 +108,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qta7k")
 text = "Back"
 
 [node name="Clear" type="Button" parent="."]
+layout_mode = 0
 offset_left = 368.0
 offset_top = 876.0
 offset_right = 530.0
